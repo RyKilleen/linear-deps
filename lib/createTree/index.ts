@@ -9,6 +9,7 @@ type Config<T extends Array<{}>> = {
   parentIdKey: KeyOfArrayItems<T>;
 };
 
+export type HashItem<T> = T & { children: HashItem<T>[] };
 export const createTree = <
   Data extends Array<{
     [key: string | number]: any;
@@ -19,16 +20,15 @@ export const createTree = <
   config: C
 ) => {
   type Item = Data[number];
-  type HashItem = Item & { children: HashItem[] };
 
   const { idKey, parentIdKey } = config;
 
-  const hashMap: Map<string | number, HashItem> = new Map();
+  const hashMap: Map<string | number, HashItem<Item>> = new Map();
   dataset.forEach((aData: Item) => {
     const aDataID = aData[idKey];
     hashMap.set(aDataID, { ...aData, children: [] });
   });
-  const dataTree: HashItem[] = [];
+  const dataTree: HashItem<Item>[] = [];
   dataset.forEach((aData: Item) => {
     const parentKey = aData[parentIdKey];
     const key = aData[idKey];

@@ -1,0 +1,11 @@
+.item {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.itemLabel {
+    padding-left: 1rem;
+    height: min-content;
+    background-color: gray;
+    width: calc(var(--issue-estimate) * 50px);
+}

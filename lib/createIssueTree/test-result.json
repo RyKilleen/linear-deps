@@ -1,0 +1,46 @@
+[
+  {
+    "id": "0ca557df-04d5-4bda-bef2-c5c9d4b174a2",
+    "title": "Test issue",
+    "inverseRelations": {
+      "nodes": []
+    },
+    "children": [
+      {
+        "id": "d00bf554-88ec-4024-ad29-51eb17f4e8f1",
+        "title": "Level 1 blocked",
+        "inverseRelations": {
+          "nodes": [
+            {
+              "type": "blocks",
+              "issue": {
+                "id": "0ca557df-04d5-4bda-bef2-c5c9d4b174a2",
+                "title": "Test issue"
+              }
+            }
+          ]
+        },
+        "parentId": "0ca557df-04d5-4bda-bef2-c5c9d4b174a2",
+        "children": [
+          {
+            "id": "2777e0b8-b67d-4a34-9a90-084c8888149f",
+            "title": "Level 2 blocked",
+            "inverseRelations": {
+              "nodes": [
+                {
+                  "type": "blocks",
+                  "issue": {
+                    "id": "d00bf554-88ec-4024-ad29-51eb17f4e8f1",
+                    "title": "Level 1 blocked"
+                  }
+                }
+              ]
+            },
+            "parentId": "d00bf554-88ec-4024-ad29-51eb17f4e8f1",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import { createTree } from "./createTree";
+import { createTree } from "./";
 it("creates a correct shape of dataTree", () => {
   const dataSet = [
     {
